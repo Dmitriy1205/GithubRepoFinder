@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:xxxxxxx/search_result_item.dart';
+import 'package:xxxxxxx/model/search_result_item.dart';
 
 class DbProvider {
   static Database _database;
@@ -40,7 +40,6 @@ class DbProvider {
     return res;
   }
 
-  // Delete all employees
   Future<int> deleteAllItems() async {
     final db = await database;
     final res = await db.rawDelete('DELETE FROM Items');
