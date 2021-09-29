@@ -1,11 +1,4 @@
-import 'dart:convert';
 import 'github_user.dart';
-
-List<SearchResultItem> itemsFromJson(String str) => List<SearchResultItem>.from(
-    json.decode(str).map((x) => SearchResultItem.fromJson(x)));
-
-String itemsToJson(List<SearchResultItem> data) =>
-    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class SearchResultItem {
   final String fullName;
@@ -13,25 +6,30 @@ class SearchResultItem {
   final GithubUser owner;
   final int stargazersCount;
 
-  const SearchResultItem({
+  SearchResultItem({
     this.fullName,
     this.htmlUrl,
     this.owner,
     this.stargazersCount,
   });
 
+  static const String Fullname = 'full_name';
+  static const String Htmlurl = 'html_url';
+  static const String Owner = 'owner';
+  static const String Stargazer = 'stargazers_count';
+
   static SearchResultItem fromJson(dynamic json) {
     return SearchResultItem(
-        fullName: json['full_name'],
-        htmlUrl: json['html_url'],
-        owner: GithubUser.fromJson(json['owner']),
-        stargazersCount: json['stargazers_count']);
+        fullName: json[Fullname],
+        htmlUrl: json[Htmlurl],
+        owner: GithubUser.fromJson(json[Owner]),
+        stargazersCount: json[Stargazer]);
   }
 
   Map<String, dynamic> toJson() => {
-        'full_name': fullName,
-        'html_url': htmlUrl,
-        'owner': owner,
-        'stargazers_count': stargazersCount,
+        Fullname: fullName,
+        Htmlurl: htmlUrl,
+        Owner: owner,
+        Stargazer: stargazersCount,
       };
 }
