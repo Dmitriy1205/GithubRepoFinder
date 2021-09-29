@@ -1,21 +1,13 @@
 import 'dart:async';
 import 'dart:convert';
-
 import 'package:http/http.dart' as http;
-import 'package:xxxxxxx/search_result_item.dart';
+import 'package:xxxxxxx/model/search_result_item.dart';
 
 class GitHubClient {
-  final String baseUrl;
-  final http.Client httpClient;
-
-  GitHubClient({
-    http.Client httpClient,
-    this.baseUrl = "https://api.github.com/search/repositories?q=",
-  }) : this.httpClient = http.Client();
-
   Future<SearchResult> search(String term) async {
-    final response = await httpClient
-        .get(Uri.parse("$baseUrl$term&sort=stars&order=desc&per_page=30"));
+    final String url = 'https://api.github.com/search/repositories?q=';
+    final response = await http
+        .get(Uri.parse('$url$term&sort=stars&order=desc&per_page=30'));
     final results = json.decode(response.body);
 
     if (response.statusCode == 200) {

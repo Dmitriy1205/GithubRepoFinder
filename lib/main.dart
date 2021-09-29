@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:xxxxxxx/search_form.dart';
-import 'github_cache.dart';
-import 'git_hub_client.dart';
-import 'github_repository.dart';
-import 'github_search_bloc.dart';
+import 'local/github_cache.dart';
+import 'client/git_hub_client.dart';
+import 'client/github_repository.dart';
+import 'bloc/github_search_bloc.dart';
 
 void main() {
   final GithubRepository _githubRepository = GithubRepository(

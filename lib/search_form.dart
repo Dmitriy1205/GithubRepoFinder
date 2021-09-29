@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:xxxxxxx/search_result_item.dart';
-import 'github_search_bloc.dart';
-import 'github_search_event.dart';
-import 'github_search_state.dart';
+import 'package:xxxxxxx/model/search_result_item.dart';
+import 'bloc/github_search_bloc.dart';
+import 'bloc/github_search_event.dart';
+import 'bloc/github_search_state.dart';
 
 class SearchForm extends StatelessWidget {
   @override

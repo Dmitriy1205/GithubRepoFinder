@@ -1,4 +1,4 @@
-import 'git_hub_client.dart';
+import '../client/git_hub_client.dart';
 
 class GithubCache {
   final _cache = <String, SearchResult>{};

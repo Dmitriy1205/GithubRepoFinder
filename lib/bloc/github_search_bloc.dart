@@ -2,9 +2,9 @@ import 'dart:async';
 import 'package:meta/meta.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:bloc/bloc.dart';
-import 'package:xxxxxxx/data/db_provider.dart';
-import 'git_hub_client.dart';
-import 'github_repository.dart';
+import 'package:xxxxxxx/local/db_provider.dart';
+import '../client/git_hub_client.dart';
+import '../client/github_repository.dart';
 import 'github_search_event.dart';
 import 'github_search_state.dart';
 

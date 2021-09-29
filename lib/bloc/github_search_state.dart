@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:xxxxxxx/search_result_item.dart';
+import 'package:xxxxxxx/model/search_result_item.dart';
 
 abstract class GithubSearchState extends Equatable {
   const GithubSearchState();
