@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'github_cache.dart';
+import '../local/github_cache.dart';
 import 'git_hub_client.dart';
 
 class GithubRepository {
